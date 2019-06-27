@@ -1,0 +1,32 @@
+﻿
+<h2>Task 1</h2>
+<p>Look at the developer's console to see the result</p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        getWeather();
+        function getWeather() {
+            // required params
+            // 1. q - location
+            // 2. num_of_days - number of days of forecase
+            // 3. key - api key
+            const location = "china";
+            const numOfDays = 5;
+            const apiKey = "c8d04db09593493d99c92453193005";
+            const url = `https://api.worldweatheronline.com/premium/v1/weather.ashx?q=${location}&num_of_days=${numOfDays}&key=${apiKey}`;
+            $.ajax({
+                url: url
+            }).done(function (xmlData) {
+                console.log(xmlData);
+                //$("#currentCondition").html(xmlData);
+                //$(xmlData).find("current_condition")
+                //$(xmlData).find("weather").each(function () {
+                //    $(this)
+                //})
+            })
+            
+        }
+
+    })
+</script>
